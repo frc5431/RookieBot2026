@@ -14,6 +14,7 @@ import static frc.robot.Constants.FuelConstants.*;
 import frc.robot.commands.Autos;
 import frc.robot.subsystems.CANDriveSubsystem;
 import frc.robot.subsystems.CANFuelSubsystem;
+import frc.robot.subsystems.LightsSubsystem;
 
 /**
  * This class is where the bulk of the robot should be declared. Since
@@ -23,9 +24,10 @@ import frc.robot.subsystems.CANFuelSubsystem;
  * commands, and trigger mappings) should be declared here.
  */
 public class RobotContainer {
-  // The robot's subsystems
-  private final CANDriveSubsystem driveSubsystem = new CANDriveSubsystem();
-  private final CANFuelSubsystem ballSubsystem = new CANFuelSubsystem();
+    // The robot's subsystems
+    private static final LightsSubsystem lightsSubsystem = new LightsSubsystem();
+    private final CANDriveSubsystem driveSubsystem = new CANDriveSubsystem();
+    private final CANFuelSubsystem ballSubsystem = new CANFuelSubsystem(lightsSubsystem);
 
   // The driver's controller
   private final CommandXboxController driverController = new CommandXboxController(
