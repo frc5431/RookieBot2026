@@ -1,5 +1,6 @@
 package frc.robot.subsystems;
 
+import com.lumynlabs.devices.ConnectorX;
 import com.lumynlabs.devices.ConnectorXAnimate;
 import com.lumynlabs.connection.usb.USBPort;
 import com.lumynlabs.domain.led.Animation;
@@ -16,7 +17,7 @@ public class LightsSubsystem extends SubsystemBase {
 
   public enum Mode { IDLE, INTAKING, LAUNCHING, SPINUP, ERROR }
 
-  private final ConnectorXAnimate device = new ConnectorXAnimate();
+  private final ConnectorX device = new ConnectorX();
   private boolean connected = false;
 
   private Mode wanted = Mode.IDLE;
